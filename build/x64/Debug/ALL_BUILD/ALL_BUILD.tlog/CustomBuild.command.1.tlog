@@ -1,0 +1,10 @@
+^C:\USERS\TARRR\ONEDRIVE\DOCUMENTS\PRACTICE_PROBLEMS\STRING_SUBSEQUENCES\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/tarrr/OneDrive/Documents/practice_problems/string_subsequences -BC:/Users/tarrr/OneDrive/Documents/practice_problems/build --check-stamp-file C:/Users/tarrr/OneDrive/Documents/practice_problems/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

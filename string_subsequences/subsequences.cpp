@@ -15,31 +15,27 @@
 
 */
 
-void getSubsequenceCountHelper(std::string s1, std::string s2, int &count)
+int count = 0;
+
+int getSubsequenceCount(std::string s1, std::string s2)
 {
     // BASE CASE
-    if (s1.empty()) ++count;
-    if (s2.empty()) return;
+    if (s1.empty()) return ++count;
+    if (s2.empty()) return count;
     
     for (int i = 0; i < s2.length(); i++)
     {
         if (s1[0] == s2[i])
         {
-            getSubsequenceCountHelper(s1.substr(1), s2.substr(i+1), count);
+            count = getSubsequenceCount(s1.substr(1), s2.substr(i+1));
         }
     }
-}
-
-int getSubsequenceCount(std::string s1, std::string s2)
-{
-    int count = 0;
-    getSubsequenceCountHelper(s1, s2, count);
     return count;
 }
 
 int main(void)
 {
-    std::cout << getSubsequenceCount(std::string("ABC"), std::string("ABBABC")) << std::endl;
+    std::cout << getSubsequenceCount(std::string("ABC"), std::string("ABCBABC")) << std::endl;
 
     return 0;
 }
